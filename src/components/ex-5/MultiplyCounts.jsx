@@ -5,28 +5,27 @@ import React from 'react'
 // * The <div> in the middle of the two counters should show the result of multiplying the two counts together.
 // * Both counters should be able to be increased/decreased independently.
 
+
+
+
+
 function MultiplyCounts() {
-  const multiply = // left * right
+  
   const [leftCount, setLeftCount] = React.useState(0)
-  const [rightCount, setRightCount] = React.useState(0)
+  const [rightCount, setRightCount] = React.useState(5)
 
-  handleLeftCount
-
-
-  handleRightCount
-
-
+  // ? don't add const [multiple, setMultiple] as you're get a lagging issue.....
 
   return (
     <div>
       <div className="counter-container">
-        <button onClick={handleLeft}>➖</button>
-        <h2>Show the left count here</h2>
-        <button>➕</button>
-        <div>Show the result of multiplying the two counts in here</div>
-        <button>➖</button>
-        <h2>Show the right count here</h2>
-        <button>➕</button>
+        <button onClick={()=> setLeftCount(leftCount - 1)}>➖</button>
+        <h2>{leftCount}</h2>
+        <button onClick={()=> setLeftCount(leftCount + 1)}>➕</button>
+        <h1>{leftCount * rightCount}</h1>
+        <button onClick={()=> setRightCount(rightCount - 1)}>➖</button>
+        <h2>{rightCount}</h2>
+        <button onClick={()=> setRightCount(rightCount + 1)}>➕</button>
       </div>
     </div>
   )
